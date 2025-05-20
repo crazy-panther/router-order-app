@@ -1,0 +1,23 @@
+<header class="app-header">
+  <div class="logo">Dialog Routers</div>
+
+  <nav class="nav-links">
+    <a routerLink="/customer/" routerLinkActive="active-link">Home</a>
+    <a routerLink="/customer/cart" routerLinkActive="active-link">Cart</a>
+  </nav>
+
+  <div class="user-info">
+    <div *ngIf="hasItemsInCart()" class="cart-notification">
+      <span>Cart Full</span>
+    </div>
+    Hello, {{ customerName }}
+  </div>
+</header>
+
+<main class="app-main">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="app-footer">
+  © 2025 Dialog Routers. All rights reserved.
+</footer>

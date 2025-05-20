@@ -1,0 +1,14 @@
+<mat-card *ngIf="order">
+    <mat-card-title>Confirm Connection</mat-card-title>
+    <mat-card>
+      <p><strong>Order ID:</strong> {{ order.id }}</p>
+      <p><strong>Item:</strong> {{ order.itemName }}</p>
+      <p><strong>Price:</strong> Rs. {{ order.price }}</p>
+      <p><strong>Status:</strong> {{ order.status }}</p>
+    </mat-card>
+    <mat-card-actions>
+      <button mat-raised-button color="primary" (click)="confirmConnection()">
+        Confirm Connection
+      </button>
+    </mat-card-actions>
+  </mat-card>

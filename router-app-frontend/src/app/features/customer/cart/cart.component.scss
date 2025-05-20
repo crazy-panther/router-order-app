@@ -1,0 +1,43 @@
+.cart-container {
+  padding: 20px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.router-image {
+  max-height: 300px;
+  object-fit: contain;
+  padding: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px;
+}
+
+.empty-cart {
+  text-align: center;
+  padding: 40px;
+  
+  .empty-icon {
+    font-size: 60px;
+    height: 60px;
+    width: 60px;
+    color: #ccc;
+    margin-bottom: 20px;
+  }
+  
+  h3 {
+    margin: 0 0 10px;
+  }
+  
+  p {
+    color: #666;
+    margin-bottom: 20px;
+  }
+}
+
+.spacer {
+  flex: 1 1 auto;
+}

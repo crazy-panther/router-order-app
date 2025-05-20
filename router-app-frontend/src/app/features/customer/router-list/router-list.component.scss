@@ -1,0 +1,70 @@
+.router-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 24px;
+}
+
+.router-card {
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease;
+  text-align: center;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+  }
+}
+
+.router-img {
+  width: 200px;
+  height: 180px;
+  object-fit: cover;
+  background-color: #f5f5f5;
+  border-radius: 12px 12px 0 0;
+  margin: 0 auto;
+  transition: transform 0.3s ease;
+}
+
+.router-details {
+  padding: 15px;
+
+  h3 {
+    margin: 10px 0 5px;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+
+  .price {
+    font-size: 1rem;
+    color: #007bff;
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  button {
+    width: 100%;
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
+}
+
+.already-added {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  color: #4CAF50;
+  font-size: 0.9rem;
+  
+  mat-icon {
+    font-size: 1rem;
+    height: 1rem;
+    width: 1rem;
+  }
+}

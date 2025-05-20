@@ -1,0 +1,80 @@
+<!-- <mat-card class="register-card">
+    <h2>Register</h2>
+  
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>First Name</mat-label>
+      <input matInput [(ngModel)]="firstName" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Last Name</mat-label>
+      <input matInput [(ngModel)]="lastName" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput [(ngModel)]="email" type="email" required />
+    </mat-form-field>
+  
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput [(ngModel)]="password" type="password" required />
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Confirm Password</mat-label>
+      <input matInput [(ngModel)]="confirmPassword" type="password" required>
+    </mat-form-field>
+    <button mat-raised-button color="primary" class="full-width" (click)="register()">
+      Register
+    </button>
+    
+    <div class="login-link">
+      Already have an account? <a routerLink="/login">Login here</a>
+    </div>
+</mat-card> -->
+
+<div class="register-container">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form (ngSubmit)="register()">
+        <mat-form-field appearance="outline">
+          <mat-label>Full Name</mat-label>
+          <input matInput [(ngModel)]="customer.customerName" name="customerName" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Email</mat-label>
+          <input matInput [(ngModel)]="customer.customerEmail" name="customerEmail" type="email" required>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput [(ngModel)]="customer.customerPassword" name="customerPassword" type="password" required
+                 (input)="checkPasswordStrength()">
+          <mat-hint>Password strength: {{ passwordStrength }}</mat-hint>
+          <mat-error *ngIf="passwordStrength === 'weak'">
+            Password is too weak. Please use a stronger password.
+          </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Confirm Password</mat-label>
+          <input matInput [(ngModel)]="confirmPassword" name="confirmPassword" type="password" required
+                 (input)="checkPasswordMatch()">
+          <mat-error *ngIf="!passwordMatch">Passwords do not match</mat-error>
+        </mat-form-field>
+
+        <button mat-raised-button color="primary" type="submit">
+          Register
+        </button>
+      </form>
+    </mat-card-content>
+    <mat-card-actions>
+      <p>Already have an account? <a routerLink="/login">Login here</a></p>
+    </mat-card-actions>
+  </mat-card>
+</div>

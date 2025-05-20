@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/routerdb
+    username: root
+    password: palinda
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+
+springdoc:
+  swagger-ui:
+    enabled: true
+
+server:
+  port: 8080

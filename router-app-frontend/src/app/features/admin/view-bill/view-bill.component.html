@@ -1,0 +1,23 @@
+<mat-card class="bill-detail" *ngIf="order">
+  <h2>Order #{{ order.orderId }}</h2>
+  
+  <div class="order-details">
+    <p><strong>Customer:</strong> {{ order.customer?.customerName }}</p>
+    <p><strong>Product:</strong> {{ order.orderItem.productName }}</p>
+    <p><strong>Quantity:</strong> {{ order.orderItem.quantity }}</p>
+    <p><strong>Total Amount:</strong> {{ order.orderItem.totalAmount | currency }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+  </div>
+
+  <div class="actions">
+    <button mat-stroked-button color="warn" (click)="goBack()">
+      <mat-icon>arrow_back</mat-icon>
+      Back to Orders
+    </button>
+  </div>
+</mat-card>
+
+<div *ngIf="!order" class="loading">
+  <mat-spinner></mat-spinner>
+  <p>Loading order details...</p>
+</div>

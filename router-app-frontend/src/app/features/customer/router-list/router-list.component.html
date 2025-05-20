@@ -1,0 +1,22 @@
+<div class="router-grid">
+  <div class="router-card" *ngFor="let router of routers">
+    <img [src]="router.image" [alt]="router.name" class="router-img" />
+
+    <div class="router-details">
+      <h3>{{ router.name }}</h3>
+      <p class="price">Rs. {{ router.price | number }}</p>
+      
+      <button mat-raised-button 
+              color="primary" 
+              (click)="orderNow(router)"
+              [disabled]="isAlreadyInCart(router.id)">
+        {{ isAlreadyInCart(router.id) ? 'Added to Cart' : 'Order Now' }}
+      </button>
+      
+      <div *ngIf="isAlreadyInCart(router.id)" class="already-added">
+        <mat-icon>check_circle</mat-icon>
+        <span>This router is in your cart</span>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<mat-card class="login-card">
+  <h2>Login</h2>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Email</mat-label>
+    <input matInput [(ngModel)]="credentials.customerEmail" type="email" required />
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Password</mat-label>
+    <input matInput [(ngModel)]="credentials.customerPassword" type="password" required />
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="full-width" (click)="login()">
+    Login
+  </button>
+  
+  <div class="register-link">
+    Don't have an account?<a mat-button color="primary" routerLink="/register">Register</a>
+  </div>
+</mat-card>

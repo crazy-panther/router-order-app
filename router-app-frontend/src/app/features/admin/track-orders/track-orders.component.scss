@@ -1,0 +1,287 @@
+/* Order Management Container */
+.order-management-container {
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Filter Section */
+.filter-section {
+  background: white;
+  border-radius: 8px;
+  margin-bottom: 24px;
+  padding: 16px 24px;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+
+  h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.87);
+  }
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: flex-end;
+
+  .search-field {
+    flex: 1 1 300px;
+  }
+
+  .advanced-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+    padding-top: 16px;
+    border-top: 1px solid #eee;
+    margin-top: 16px;
+
+    mat-form-field {
+      flex: 1 1 200px;
+    }
+  }
+}
+
+/* Table Section */
+.table-section {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #eee;
+
+  .selected-count {
+    font-size: 14px;
+    color: #3f51b5;
+    font-weight: 500;
+  }
+}
+
+.orders-table {
+  width: 100%;
+
+  .mat-header-cell {
+    font-weight: 600;
+    font-size: 14px;
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #fafafa;
+  }
+
+  .mat-cell {
+    padding: 12px 16px;
+    font-size: 14px;
+  }
+
+  .order-id {
+    font-family: 'Roboto Mono', monospace;
+    color: #3f51b5;
+    font-weight: 500;
+  }
+
+  .customer-cell {
+    .customer-info {
+      .customer-name {
+        font-weight: 500;
+      }
+
+      .customer-email {
+        font-size: 12px;
+        color: rgba(0, 0, 0, 0.54);
+      }
+    }
+  }
+
+  .router-cell mat-chip {
+    font-size: 12px;
+    height: 24px;
+  }
+
+  .price-cell {
+    font-weight: 500;
+    color: #4caf50;
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: 500;
+    text-transform: capitalize;
+
+    &.pending {
+      background-color: #fff3e0;
+      color: #e65100;
+    }
+
+    &.approved {
+      background-color: #e8f5e9;
+      color: #2e7d32;
+    }
+
+    &.shipped {
+      background-color: #e3f2fd;
+      color: #1565c0;
+    }
+
+    &.cancelled {
+      background-color: #ffebee;
+      color: #c62828;
+    }
+  }
+
+  .actions-cell {
+    button {
+      margin-right: 8px;
+    }
+  }
+
+  .selected-row {
+    background-color: #f5f5f5 !important;
+  }
+
+  .mat-row {
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #f9f9f9;
+    }
+  }
+}
+
+/* Bulk Actions */
+.bulk-actions {
+  display: flex;
+  gap: 16px;
+  padding: 16px 24px;
+  border-top: 1px solid #eee;
+  background-color: #fafafa;
+
+  button {
+    mat-icon {
+      margin-right: 8px;
+      font-size: 18px;
+      height: 18px;
+      width: 18px;
+    }
+  }
+}
+
+/* Paginator */
+.mat-paginator {
+  border-top: 1px solid #eee;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 960px) {
+  .order-management-container {
+    padding: 16px;
+  }
+
+  .filter-controls {
+    flex-direction: column;
+    align-items: stretch;
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .bulk-actions {
+    flex-direction: column;
+  }
+}
+
+.track-orders-container {
+  padding: 20px;
+
+  .mat-card {
+    margin-bottom: 20px;
+  }
+
+  .search-filter-section {
+    margin-bottom: 20px;
+    
+    mat-form-field {
+      width: 100%;
+      max-width: 500px;
+    }
+  }
+
+  .action-buttons {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+
+    button {
+      mat-icon {
+        margin-right: 8px;
+      }
+    }
+  }
+
+  .orders-table {
+    width: 100%;
+    margin-bottom: 20px;
+
+    .mat-column-select {
+      width: 48px;
+      text-align: center;
+    }
+
+    .mat-column-id {
+      width: 80px;
+    }
+
+    .mat-column-actions {
+      width: 80px;
+      text-align: center;
+    }
+
+    .mat-column-status {
+      width: 150px;
+    }
+
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .no-data-message {
+    text-align: center;
+    padding: 20px;
+    color: rgba(0, 0, 0, 0.54);
+  }
+}
+
+.router-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.router-name {
+  font-weight: 500;
+  color: #3f51b5;
+}
+
+.product-name {
+  font-size: 0.9em;
+  color: rgba(0, 0, 0, 0.6);
+}
